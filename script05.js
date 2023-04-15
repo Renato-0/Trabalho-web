@@ -15,18 +15,6 @@ console.log(dados.length)
 dados.forEach((el)=> repositorio.addTodo(new Todo(el) ))
 console.log(repositorio.todos)
 
-function cadastrar() {
-    let texto = document.getElementById("descricao").value
-    let obj = {
-        userId: 0,
-        id: 0,
-        title: texto,
-        completed: false
-    }
-    let todo = new Todo(obj)
-    repositorio.addTodo( todo )
-}
-
 function trocou(val) {
     let todo = repositorio.getTodo(val)
     if (todo != undefined) {
@@ -42,8 +30,14 @@ function cr() {
   text += "<br>Usuario" + value.userId + 
           "<br>Id " +value.id+ 
           "<br>" +value.title+ 
-          "<br>" +value.completed+"<br><p>"
+          "<br>" +(value.completed ? 'Finalizado' : 'Aberto')+"<br><p>"    
+
+          if(value.completed=='Aberto'){
+            document.getElementById("detalhe").style.fontSize = '200pt';
+        }
+
 })
+
 
     document.getElementById("detalhe").innerHTML = text;
 }
@@ -60,23 +54,29 @@ function use() {
 }
 
 function juntar(){
-    //Tentativa Falha
-    let text = "";
-  dados.forEach (function(value) {
-  text += "<br>Usuario" + value.userId + 
-          "<br>Id " +value.id+ 
-          "<br>" +value.title+ 
-          "<br>" +value.completed+"<br><p>"
+    let text2 = "";
 
-          if(text!='Usuario1'){
-         end
+  dados.forEach (function(value) {
+    dadosUser.forEach (function(value2) {        
+        if(value.userId==value2.id){
+        text2 +="<br>Nome Usuario:" +value2.name+
+               //"<br>Usuario:" + value.userId + 
+               "<br>Id Todo: " +value.id+ 
+               "<br>" +value.title+ 
+               "<br>" +(value.completed ? 'Finalizado' : 'Aberto')+"<br><p>"
+          
+    
         }
+    })  
+    
 })
 
-document.getElementById("campo").innerHTML = text;
 
- }
-    
+
+
+document.getElementById("campo").innerHTML = text2;
+ 
+}  
   
 
 function show(n){
@@ -85,7 +85,7 @@ function show(n){
      if (userN != undefined) {
        document.getElementById("campoDados").innerHTML = UserView.toHTML( userN )
     } else {
-        document.getElementById("campoDados").innerHTML = "Código não encontrado"
+        document.getElementById("campoDados").innerHTML = "Usúario não encontrado"
     }
 
 }
