@@ -1,26 +1,15 @@
-class Pessoa {
-    constructor(jsonObj) {
-        this.id = jsonObj.id
-        this.nome= jsonObj.nome
-        this.cargo = jsonObj.cargo
-        this.unidade = jsonObj.unidade
-        this.digital = jsonObj.digital
-        this.sincrono = jsonObj.sincrono
-    }
-    descricao() {
-        return this.nome + " ("+this.cargo+")"
-    }
-}
-
 class TodoView {
+    
     static toHTML(todo) {
         return  "<div>"+
         "<p>Usuario: "+todo.userId+"</p>"+
         "<p>ID: "+todo.id+"</p>"+
         " <p>"+todo.title+"</p>"+
-        "<p>"+ (todo.completed ? 'Finalizado' : 'Aberto') +"</p>"+
+        "<p><td>"+ (todo.completed ? 'Finalizado' : 'Aberto') +"</p>"+
         "</div>"
+
     }
+    
 }
 
 class Todo {
