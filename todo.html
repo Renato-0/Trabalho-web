@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todos</title>
 </head>
 <style>
+
+
+
 
         a:link, a:visited {
             border-radius: 50px 50px 50px 50px;
@@ -16,9 +19,11 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
+            border: 1px solid black;
         }
 
         a:hover, a:active {
+            
             background-color: rgba(9, 76, 202, 0.747);
         }
 
@@ -27,9 +32,11 @@
      body{
         background-image: linear-gradient(to right, #4177c9, #4dc999);
         text-align: center;
+        margin: 50px;;
     }
 
-    .big{
+     .big{
+        border: 1px solid black;
         text-align: center;
         font-size: 16pt;
         margin: auto;
@@ -37,19 +44,20 @@
         border-radius: 15px 50px 30px;
         background: mediumturquoise;
         padding: 20px; 
-        width: 350px;  
-    }
+        width: 600px;  
+        justify-content: center;
+    }  
 
-    
 
 </style>
 <body>
-    <button onclick="cr()">Listar</button> <br> <br>
-    id: <input type="number" value="0" onchange="trocou(this.value)"/>
-    <div class="big" id="detalhe">             
-    </div><br>
+    <button onclick="cr()">Listar todos</button> <br> <br>
+    Id do todo: <input type="number" value="0" onchange="trocou(this.value)"/><br>
+
+    <br><div class="big" id="detalhe"><br></div>
 
     <p><a class="button" href="user.html">Usuarios</a></p> 
+    <p><a class="button" href="userTodo.html">Usuario&Todo</a></p> 
     
     <script src="classes05.js"></script>
     <script src="dados05.js"></script>
