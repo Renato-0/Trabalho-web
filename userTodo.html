@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Juntos</title>
 </head>
 <style>
 
-     body{
+      body{
         background-image: linear-gradient(to right, #4177c9, #4dc999);
         text-align: center;
-    }
+        margin: 50px;;
+    } 
 
-    .des{
+     .des{
         text-align: center;
         font-size: 16pt;
         margin: auto;
@@ -21,16 +22,33 @@
         border-radius: 15px 50px 30px;
         background: mediumturquoise;
         padding: 20px; 
-        width: 350px;  
+        width: 550px;  
+    } 
+
+    .but:link, .but:visited{
+        border-radius: 50px 50px 50px 50px;
+            background-color: #65cfe2c5;
+            color: rgb(0, 0, 0);
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border: 1px solid black;
+    }
+
+    .but:hover, .but:active{
+        background-color: rgba(9, 76, 202, 0.747);
     }
 
     
 
 </style>
 <body>
-    <button onclick="juntar()">Users</button> <br> <br> 
+    <p><a class="but" href="todo.html">Inicio</a></p> 
+    <button onclick="juntar()">Usuarios&Todos</button> <br> <br> 
     <div class="des" id="campo" >
     </div><br>  
+    
     
     <script src="classes05.js"></script>
     <script src="dados05.js"></script>
